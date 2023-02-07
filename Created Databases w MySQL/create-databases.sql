@@ -10,10 +10,10 @@ CREATE TABLE `payment_methods` (
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`payment_method_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-INSERT INTO `payment_methods` VALUES (1,'Credit Card');
-INSERT INTO `payment_methods` VALUES (2,'Cash');
-INSERT INTO `payment_methods` VALUES (3,'PayPal');
-INSERT INTO `payment_methods` VALUES (4,'Wire Transfer');
+INSERT INTO `payment_methods` VALUES (1,'Debit Card');
+INSERT INTO `payment_methods` VALUES (2,'Check');
+INSERT INTO `payment_methods` VALUES (3,'Apple Pay');
+INSERT INTO `payment_methods` VALUES (4,'Google Pay');
 
 CREATE TABLE `clients` (
   `client_id` int(11) NOT NULL,
@@ -24,11 +24,16 @@ CREATE TABLE `clients` (
   `phone` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`client_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-INSERT INTO `clients` VALUES (1,'Vinte','3 Nevada Parkway','Syracuse','NY','315-252-7305');
-INSERT INTO `clients` VALUES (2,'Myworks','34267 Glendale Parkway','Huntington','WV','304-659-1170');
-INSERT INTO `clients` VALUES (3,'Yadel','096 Pawling Parkway','San Francisco','CA','415-144-6037');
-INSERT INTO `clients` VALUES (4,'Kwideo','81674 Westerfield Circle','Waco','TX','254-750-0784');
-INSERT INTO `clients` VALUES (5,'Topiclounge','0863 Farmco Road','Portland','OR','971-888-9129');
+INSERT INTO `clients` VALUES (1,'Minty','123 Main St','New York','NY','111-111-1111');
+INSERT INTO `clients` VALUES (2,'Workers','456 Elm St','Chicago','IL','222-222-2222');
+INSERT INTO `clients` VALUES (3,'Del','789 Pine St','Los Angeles','CA','333-333-3333');
+INSERT INTO `clients` VALUES (4,'Video','321 Maple Ave','Houston','TX','444-444-4444');
+INSERT INTO `clients` VALUES (5,'Lounge','654 Oak St','Seattle','WA','555-555-5555');
+INSERT INTO `clients` VALUES (6,'Zebra','987 Cedar St','Miami','FL','666-666-6666');
+INSERT INTO `clients` VALUES (7,'Yoyo','654 Birch St','Dallas','TX','777-777-7777');
+INSERT INTO `clients` VALUES (8,'Xylo','321 Maple St','Boston','MA','888-888-8888');
+INSERT INTO `clients` VALUES (9,'Wombat','123 Elm St','San Diego','CA','999-999-9999');
+INSERT INTO `clients` VALUES (10,'Violet','456 Pine Ave','Atlanta','GA','000-000-0000');
 
 CREATE TABLE `invoices` (
   `invoice_id` int(11) NOT NULL,
@@ -59,7 +64,7 @@ INSERT INTO `invoices` VALUES (15,'55-105-9605',3,167.29,80.31,'2019-11-25','201
 INSERT INTO `invoices` VALUES (16,'10-451-8824',1,162.02,0.00,'2019-03-30','2019-04-19',NULL);
 INSERT INTO `invoices` VALUES (17,'33-615-4694',3,126.38,68.10,'2019-07-30','2019-08-19','2019-01-15');
 INSERT INTO `invoices` VALUES (18,'52-269-9803',5,180.17,42.77,'2019-05-23','2019-06-12','2019-01-08');
-INSERT INTO `invoices` VALUES (19,'83-559-4105',1,134.47,0.00,'2019-11-23','2019-12-13',NULL);
+
 
 CREATE TABLE `payments` (
   `payment_id` int(11) NOT NULL AUTO_INCREMENT,
@@ -97,16 +102,11 @@ CREATE TABLE `products` (
   `unit_price` decimal(4,2) NOT NULL,
   PRIMARY KEY (`product_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-INSERT INTO `products` VALUES (1,'Foam Dinner Plate',70,1.21);
-INSERT INTO `products` VALUES (2,'Pork - Bacon,back Peameal',49,4.65);
-INSERT INTO `products` VALUES (3,'Lettuce - Romaine, Heart',38,3.35);
-INSERT INTO `products` VALUES (4,'Brocolinni - Gaylan, Chinese',90,4.53);
-INSERT INTO `products` VALUES (5,'Sauce - Ranch Dressing',94,1.63);
-INSERT INTO `products` VALUES (6,'Petit Baguette',14,2.39);
-INSERT INTO `products` VALUES (7,'Sweet Pea Sprouts',98,3.29);
-INSERT INTO `products` VALUES (8,'Island Oasis - Raspberry',26,0.74);
-INSERT INTO `products` VALUES (9,'Longan',67,2.26);
-INSERT INTO `products` VALUES (10,'Broom - Push',6,1.09);
+INSERT INTO `products` VALUES (11,'Nescafe - Coffee',34,3.97);
+INSERT INTO `products` VALUES (12,'Carrots - Mini',73,0.93);
+INSERT INTO `products` VALUES (13,'Cheese - Boursin, Garlic / Herbs',20,2.99);
+INSERT INTO `products` VALUES (14,'Wine - Red, Pinot Noir, Emeriti',62,12.67);
+INSERT INTO `products` VALUES (15,'Bread - Roll, Italian',17,0.89);
 
 
 CREATE TABLE `shippers` (
@@ -114,11 +114,12 @@ CREATE TABLE `shippers` (
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`shipper_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-INSERT INTO `shippers` VALUES (1,'Hettinger LLC');
-INSERT INTO `shippers` VALUES (2,'Schinner-Predovic');
-INSERT INTO `shippers` VALUES (3,'Satterfield LLC');
-INSERT INTO `shippers` VALUES (4,'Mraz, Renner and Nolan');
-INSERT INTO `shippers` VALUES (5,'Waters, Mayert and Prohaska');
+INSERT INTO `shippers` VALUES (1,'Lloyd Inc');
+INSERT INTO `shippers` VALUES (2,'Walsh-Smith');
+INSERT INTO `shippers` VALUES (3,'Bates and Sons');
+INSERT INTO `shippers` VALUES (4,'Parker, Turner and Riley');
+INSERT INTO `shippers` VALUES (5,'Brown and Associates');
+
 
 
 CREATE TABLE `customers` (
@@ -266,7 +267,7 @@ INSERT INTO `employees` VALUES (37270,'Yovonnda','Magrannell','Executive Secreta
 INSERT INTO `employees` VALUES (33391,'D\'arcy','Nortunen','Account Executive',62871,37270,1);
 INSERT INTO `employees` VALUES (37851,'Sayer','Matterson','Statistician III',98926,37270,1);
 INSERT INTO `employees` VALUES (40448,'Mindy','Crissil','Staff Scientist',94860,37270,1);
-INSERT INTO `employees` VALUES (56274,'Keriann','Alloisi','VP Marketing',110150,37270,1);
+INSERT INTO `employees` VALUES (56274,'Ihsan','Koo','Data Scientist',150150,37270,1);
 INSERT INTO `employees` VALUES (63196,'Alaster','Scutchin','Assistant Professor',32179,37270,2);
 INSERT INTO `employees` VALUES (67009,'North','de Clerc','VP Product Management',114257,37270,2);
 INSERT INTO `employees` VALUES (67370,'Elladine','Rising','Social Worker',96767,37270,2);
