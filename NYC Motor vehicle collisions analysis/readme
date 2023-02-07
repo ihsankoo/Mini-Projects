@@ -1,0 +1,9 @@
+Data Analysis of Motor Vehicle Collisions in NYC
+
+As a data analyst, I was tasked with analyzing motor vehicle collisions in NYC to understand the patterns and relationships between collisions and key variables. My objective was to uncover insights into the causes of collisions and identify areas where improvements could be made to reduce the number of incidents.
+
+To accomplish this, I conducted an extensive exploratory data analysis on the collision data, utilizing various data visualization techniques to identify patterns and relationships. I discovered several key variables that had a significant impact on the frequency and severity of collisions.
+
+Next, I produced a heatmap using the Folium library in Python to show the exact locations of collisions in NYC. The heatmap provided a visual representation of the density of collisions in different areas of the city and helped identify areas with high concentrations of incidents.
+
+Finally, I provided insights and recommendations to stakeholders on ways to reduce the number of motor vehicle collisions in NYC. This project demonstrated the potential for data analysis to inform decision-making and improve public safety.
