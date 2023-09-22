@@ -1,0 +1,43 @@
+PART 1: Sorting Arrays
+
+1. Initialize 2D array with state and capital pairs:
+   statesAndCapitals = [["Alabama", "Montgomery"], ["Alaska", "Juneau"], ... ]
+
+2. Display array:
+   for each pair in statesAndCapitals:
+       print(pair[0], "-", pair[1])
+
+3. Bubble Sort by capital:
+   for i from 0 to length of statesAndCapitals - 1:
+       for j from 0 to length of statesAndCapitals - i - 2:
+           if statesAndCapitals[j][1] > statesAndCapitals[j+1][1]:
+               swap statesAndCapitals[j] and statesAndCapitals[j+1]
+
+4. User Input and Counting Correct Answers:
+   correctCount = 0
+   for each pair in statesAndCapitals:
+       userAnswer = input("Enter the capital for " + pair[0] + ": ")
+       if userAnswer (case insensitive) equals pair[1]:
+           correctCount = correctCount + 1
+   print("You answered", correctCount, "questions correctly out of 50.")
+
+
+
+PART 2: Sorting & Searching HashMap
+
+1. Initialize HashMap with state and capital pairs:
+   statesAndCapitalsMap = { "Alabama": "Montgomery", "Alaska": "Juneau", ... }
+
+2. Display HashMap:
+   for each entry in statesAndCapitalsMap:
+       print(entry.key, "-", entry.value)
+
+3. TreeMap for sorting:
+   sortedStatesAndCapitals = new TreeMap(statesAndCapitalsMap)
+
+4. User Input for state and displaying its capital:
+   userState = input("Enter a state: ")
+   if sortedStatesAndCapitals contains userState:
+       print("The capital of", userState, "is", sortedStatesAndCapitals.get(userState))
+   else:
+       print(userState, "is not in the list.")
